@@ -14,22 +14,27 @@ public class CruiseShip {
         this.passengers = new ArrayList<>();
     }
 
+    // returns the name of the cruise ship
     public String getName() {
         return name;
     }
 
+    // returns the list of destinations in the itinerary
     public List<Destination> getItinerary() {
         return itinerary;
     }
 
+    // returns the list of passengers on the cruise ship
     public List<Passenger> getPassengers() {
         return passengers;
     }
 
+    // adds a destination to the cruise itinerary
     public void addDestination(Destination destination) {
         itinerary.add(destination);
     }
 
+    // adds a passenger to the cruise if capacity allows
     public void addPassenger(Passenger passenger) {
         if (passengers.size() < passengerCapacity) {
             passengers.add(passenger);
@@ -38,6 +43,7 @@ public class CruiseShip {
         }
     }
 
+    // prints the cruise itinerary along with activities at each destination
     public void printItinerary() {
         System.out.println("Cruise Ship: " + name);
         System.out.println("Itinerary:");
@@ -47,6 +53,7 @@ public class CruiseShip {
         }
     }
 
+    // prints the list of passengers on the cruise
     public void printPassengerList() {
         System.out.println("Cruise Ship: " + name);
         System.out.println("Passenger Capacity: " + passengerCapacity);
@@ -56,6 +63,7 @@ public class CruiseShip {
         }
     }
 
+    // prints all available activities across the cruise's itinerary
     public void printAvailableActivities() {
         System.out.println("Available Activities on " + name + ":");
         for (Destination destination : itinerary) {

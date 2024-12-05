@@ -7,10 +7,12 @@ public class Star {
         this.character = character;
     }
 
+    // returns the name of the star
     public String getName() {
         return name;
     }
 
+    // returns the character played by the star
     public String getCharacter() {
         return character;
     }

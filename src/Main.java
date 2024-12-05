@@ -25,6 +25,7 @@ public class Main {
         orientalOdyssey.printPassengerList();
     }
 
+    // adds a predefined itinerary to the specified cruise ship
     public static void addOrientalOdysseyItinerary(CruiseShip cruise) {
         cruise.addDestination(createHomePort());
         cruise.addDestination(createDestination("Taipei (Keelung)", "Taipei 101", "Shilin Night Market", "National Palace Museum"));
@@ -35,10 +36,12 @@ public class Main {
         cruise.addDestination(createHomePort());
     }
 
+    // creates and returns the home port destination
     public static Destination createHomePort() {
         return new Destination("Hong Kong");
     }
 
+    // creates and returns a destination with a given name and three activities
     public static Destination createDestination(String name, String stop1, String stop2, String stop3) {
         Destination destination = new Destination(name);
         destination.addActivity(new WalkingTour(name + " Walking Tour", "Explore " + name + " including " + stop1 + ", " + stop2 + ", and " + stop3, 50.0, 15, 5.0));
@@ -46,6 +49,7 @@ public class Main {
         return destination;
     }
 
+    // creates and returns a list of passengers with random types and attributes
     public static List<Passenger> createPassengerBank(int count) {
         List<Passenger> passengerBank = new ArrayList<>();
         String[] firstNames = {"Alice", "Bob", "Charlie", "Diana", "Evelyn"};
@@ -69,6 +73,7 @@ public class Main {
         return passengerBank;
     }
 
+    // randomly assigns a specified number of passengers from the bank to the cruise
     public static void assignPassengersToCruise(CruiseShip cruise, List<Passenger> passengerBank, int count) {
         Random random = new Random();
         for (int i = 0; i < count; i++) {

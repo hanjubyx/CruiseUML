@@ -6,6 +6,7 @@ public class WalkingTour extends Activity {
         this.distance = distance;
     }
 
+    // prints the details of the walking tour, including distance and available spaces
     @Override
     public void printDetails() {
         System.out.println("Walking Tour: " + name + ", Cost: " + cost + ", Capacity: " + capacity +

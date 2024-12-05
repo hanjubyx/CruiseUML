@@ -12,13 +12,16 @@ public abstract class Passenger {
         this.signedUpActivities = new ArrayList<>();
     }
 
+    // abstract method to check if the passenger can sign up for an activity
     public abstract boolean canSignUp(Activity activity);
 
+    // abstract method to deduct the cost of an activity from the passenger's balance
     public abstract void deductCost(double cost);
 
+    // signs the passenger up for an activity at a specific destination, if possible
     public void signUpForActivity(Activity activity, Destination destination) {
         if (signedUpActivities.contains(activity)) {
-            return;
+            return; // Passenger is already signed up for this activity
         }
 
         if (!canSignUp(activity)) {
@@ -37,6 +40,7 @@ public abstract class Passenger {
         System.out.println(name + " successfully signed up for " + activity.getName() + " at " + destination.getName());
     }
 
+    // prints the details of the passenger, including their signed-up activities
     public void printDetails() {
         System.out.println("Passenger: " + name + ", Number: " + passengerNumber);
         System.out.println("Signed Up Activities:");

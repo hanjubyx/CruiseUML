@@ -3,16 +3,17 @@ public class PremiumPassenger extends Passenger {
         super(name, passengerNumber);
     }
 
+    // returns true since premium passengers can sign up for any activity without restrictions
     @Override
     public boolean canSignUp(Activity activity) {
-        return true; // Premium passengers can always sign up
+        return true;
     }
 
+    // premium passengers do not pay for activities, so this method is empty
     @Override
-    public void deductCost(double cost) {
-        // Premium passengers do not pay for activities
-    }
+    public void deductCost(double cost) {}
 
+    // prints the details of the premium passenger
     @Override
     public void printDetails() {
         super.printDetails();
